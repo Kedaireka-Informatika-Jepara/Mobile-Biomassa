@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/panen_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_padding"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="@dimen/layout_padding"
+        android:layout_marginBottom="5dp">
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/jenis_biota_label"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:text="@string/jenis_biota"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/jenis_biota_tv"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/ukuran_biota_label"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:text="@string/ukuran_biota_cm"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <TextView
+                    android:id="@+id/ukuran_biota_tv"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/bobot_biota_label"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:text="@string/bobot_biota_gram"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <TextView
+                    android:id="@+id/bobot_biota_tv"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/jumlah_panen_biota_label"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:text="@string/jumlah_panen"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <TextView
+                    android:id="@+id/jumlah_panen_biota_tv"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/gagal_panen_biota_label"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:text="@string/jumlah_gagal_panen_ekor"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <TextView
+                    android:id="@+id/gagal_panen_biota_tv"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tanggal_panen_biota_label"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:text="@string/tanggal_panen_biota"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <TextView
+                    android:id="@+id/tanggal_panen_biota_tv"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </TableRow>
+        </TableLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

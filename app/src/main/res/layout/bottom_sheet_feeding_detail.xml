@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bottomSheetFeedingDetail"
+            type="com.cemebsa.biomassa.views.add.BottomSheetFeedingDetail" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title_tv"
+                style="@style/BottomSheetTextColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="@string/tambah_detail_pemberian_pakan"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:onClick="@{() -> bottomSheetFeedingDetail.dismiss()}"
+                android:src="@drawable/ic_baseline_close_24"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/layout_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/layout_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pakan_dropdown_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/pakan_dropdown"
+                    android:text="@string/jenis_pakan" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/pakan_dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ukuran_tebar_tv"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ukuran_tebar_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/ukuran_tebar"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:minHeight="48dp"
+                        android:selectAllOnFocus="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/banyak_pakan_tv"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/banyak_pakan_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Banyak Pakan"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:minHeight="48dp"
+                        android:selectAllOnFocus="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/ic_baseline_access_time_24">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/jam_feeding_et"
+                        android:onClick="@{() -> bottomSheetFeedingDetail.showTimePicker()}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:focusable="false"
+                        android:hint="@string/jam_pemberian_pakan"
+                        android:minHeight="48dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/save_feeding_detail_btn"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> bottomSheetFeedingDetail.saveFeedingDetail()}"
+                        android:text="@string/simpan"
+                        android:textColor="@color/white" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_loading"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

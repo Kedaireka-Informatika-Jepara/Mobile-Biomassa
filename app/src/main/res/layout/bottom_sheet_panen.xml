@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bottomSheetPanen"
+            type="com.cemebsa.biomassa.views.add.BottomSheetPanen" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title_tv"
+                style="@style/BottomSheetTextColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="@string/tambah_data_panen"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:onClick="@{() -> bottomSheetPanen.dismiss()}"
+                android:src="@drawable/ic_baseline_close_24" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/layout_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/layout_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_fragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/keramba_dropdown_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:labelFor="@+id/keramba_dropdown"
+                    android:text="@string/keramba_asal" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:layout_marginBottom="20dp">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/keramba_dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/biota_dropdown_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:labelFor="@+id/biota_dropdown"
+                    android:text="@string/jenis_biota" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:layout_marginBottom="20dp">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/biota_dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp" />
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/panjang_biota_tv"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/panjang_biota_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/ukuran_biota_cm"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:minHeight="48dp"
+                        android:selectAllOnFocus="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/bobot_biota_tv"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bobot_biota_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/bobot_biota_gram"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:minHeight="48dp"
+                        android:selectAllOnFocus="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/jumlah_biota_tv"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/jumlah_biota_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/jumlah_panen"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:minHeight="48dp"
+                        android:selectAllOnFocus="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/jumlah_gagal_biota_tv"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/jumlah_gagal_biota_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/jumlah_gagal_panen_ekor"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:minHeight="48dp"
+                        android:selectAllOnFocus="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding"
+                    android:layout_marginBottom="20dp"
+                    app:endIconDrawable="@drawable/ic_baseline_date_range_24"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tanggal_panen_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true"
+                        android:focusable="false"
+                        android:hint="@string/tanggal_panen_biota"
+                        android:minHeight="48dp"
+                        android:onClick="@{() -> bottomSheetPanen.showDatePicker()}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/save_panen_btn"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/layout_padding"
+                        android:layout_marginEnd="@dimen/layout_padding"
+                        android:onClick="@{() -> bottomSheetPanen.savePanen()}"
+                        android:text="@string/simpan"
+                        android:textColor="@color/white" />
+                    <ProgressBar
+                        android:id="@+id/progress_loading"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

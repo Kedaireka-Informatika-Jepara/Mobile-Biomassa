@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.cemebsa.biomassa.views.login.LoginFragment"
+        android:label="Login" >
+        <action
+            android:id="@+id/action_loginFragment_to_navBarFragment"
+            app:destination="@id/navBarFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/navBarFragment"
+        android:name="com.cemebsa.biomassa.views.NavBarFragment"
+        android:label="NavBarFragment" />
+</navigation>

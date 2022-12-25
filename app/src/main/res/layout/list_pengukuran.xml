@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/pengukuran_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_padding"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="@dimen/layout_padding"
+        android:layout_marginBottom="5dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TableLayout
+                android:id="@+id/table_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tanggal_ukur_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/ukuran_biota_label"
+                        android:layout_marginEnd="@dimen/layout_padding"
+                        android:text="@string/ukuran_biota_cm"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                    <TextView
+                        android:id="@+id/ukuran_biota_tv"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/bobot_biota_label"
+                        android:layout_marginEnd="@dimen/layout_padding"
+                        android:text="@string/bobot_biota_gram"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                    <TextView
+                        android:id="@+id/bobot_biota_tv"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/tanggal_ukur_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Material.Body1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/tanggal_tebar_bibit" />
+
+            <ImageView
+                android:id="@+id/history_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_bar_chart_30" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

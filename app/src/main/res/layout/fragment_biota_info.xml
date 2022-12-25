@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/layout_padding">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/info_biota_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_padding"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/layout_padding"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@id/panjang_chart_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="14dp">
+
+                    <ImageView
+                        android:id="@+id/edit_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_edit_24"
+                        tools:ignore="ContentDescription" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/jenis_biota_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/biota" />
+
+                    <TableLayout
+                        android:id="@+id/table_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="@id/jenis_biota_tv"
+                        app:layout_constraintTop_toBottomOf="@id/jenis_biota_tv">
+
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/tanggal_tebar_label"
+                                android:layout_marginEnd="@dimen/layout_padding"
+                                android:text="@string/tanggal_tebar_bibit"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                            <TextView
+                                android:id="@+id/tanggal_tebar_tv"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/bobot_bibit_label"
+                                android:layout_marginEnd="@dimen/layout_padding"
+                                android:text="@string/ukuran_bibit_gram"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                            <TextView
+                                android:id="@+id/bobot_bibit_tv"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/ukuran_bibit_label"
+                                android:layout_marginEnd="@dimen/layout_padding"
+                                android:text="@string/ukuran_bibit_cm"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                            <TextView
+                                android:id="@+id/ukuran_bibit_tv"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/jumlah_bibit_label"
+                                android:layout_marginEnd="@dimen/layout_padding"
+                                android:text="@string/jumlah_tebar"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                            <TextView
+                                android:id="@+id/jumlah_bibit_tv"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/panjang_chart_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_padding"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/layout_padding"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/bobot_chart_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/info_biota_card">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="14dp">
+
+                    <ProgressBar
+                        android:id="@+id/progress_loading_panjang_chart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"/>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/panjang_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bobot_chart_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_padding"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/layout_padding"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/panjang_chart_card">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="14dp">
+
+                    <ProgressBar
+                        android:id="@+id/progress_loading_bobot_chart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"/>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/bobot_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

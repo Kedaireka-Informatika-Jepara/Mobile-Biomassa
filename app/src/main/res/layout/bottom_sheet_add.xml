@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bottomSheetAdd"
+            type="com.cemebsa.biomassa.views.add.BottomSheetAdd" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/layout_padding">
+
+        <TextView
+            android:id="@+id/add_keramba_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> bottomSheetAdd.launchBottomSheet(view)}"
+            android:text="@string/keramba"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.Material.Body1"
+            app:drawableTopCompat="@drawable/ic_add_circle_30"
+            app:layout_constraintEnd_toStartOf="@id/add_pakan_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/add_pakan_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> bottomSheetAdd.launchBottomSheet(view)}"
+            android:text="@string/pakan"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.Material.Body1"
+            app:drawableTopCompat="@drawable/ic_add_circle_30"
+            app:layout_constraintEnd_toStartOf="@+id/add_biota_btn"
+            app:layout_constraintStart_toEndOf="@id/add_keramba_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/add_biota_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> bottomSheetAdd.launchBottomSheet(view)}"
+            android:text="@string/biota"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.Material.Body1"
+            app:drawableTopCompat="@drawable/ic_add_circle_30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/add_pakan_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel_btn"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:onClick="@{() -> bottomSheetAdd.dismiss()}"
+            android:text="@string/batalkan"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_keramba_btn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

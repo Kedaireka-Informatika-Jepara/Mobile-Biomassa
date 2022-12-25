@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cemebsa.biomassa.views.HomeFragment"
+        android:label="@string/home_page_name" >
+        <action
+            android:id="@+id/action_homeFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" >
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.cemebsa.biomassa.views.SettingsFragment"
+        android:label="@string/setting_page_name"/>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.cemebsa.biomassa.views.summary.SummaryFragment"
+        android:label="Summary"
+        tools:layout="@layout/fragment_summary" >
+        <action
+            android:id="@+id/action_summaryFragment_to_biotaHistoryFragment"
+            app:destination="@id/biotaHistoryFragment" />
+        <action
+            android:id="@+id/action_summaryFragment_to_biotaTabFragment"
+            app:destination="@id/biotaTabFragment" />
+        <action
+            android:id="@+id/action_summaryFragment_to_feedingDetailFragment"
+            app:destination="@id/feedingDetailFragment" />
+        <argument
+            android:name="kerambaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/biotaHistoryFragment"
+        android:name="com.cemebsa.biomassa.views.summary.keramba.BiotaHistoryFragment"
+        android:label="@string/riwayat_biota" >
+        <argument
+            android:name="kerambaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/biotaTabFragment"
+        android:name="com.cemebsa.biomassa.views.summary.biota.BiotaTabFragment"
+        android:label="Biota Summary" >
+        <argument
+            android:name="biotaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="kerambaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedingDetailFragment"
+        android:name="com.cemebsa.biomassa.views.summary.pakan.FeedingDetailFragment"
+        android:label="FeedingDetailFragment" >
+        <argument
+            android:name="kerambaId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="feedingId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

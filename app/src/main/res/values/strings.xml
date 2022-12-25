@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Monitoring Biomassa</string>
+    <string name="home_page_name">Home</string>
+    <string name="add_bottomsheet_name">Add</string>
+    <string name="setting_page_name">Pengaturan</string>
+    <string name="tambahkan">Tambahkan</string>
+
+    <!--Setting Page-->
+    <string name="lainnya">Lainnya</string>
+    <string name="tentang_kjabb">Tentang KJABB</string>
+    <string name="website_monitoring">Website Monitoring</string>
+    <string name="sosial_media">Sosial Media</string>
+    <string name="umpan_balik">Umpan Balik</string>
+    <!-- Strings related to login -->
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="login_failed">"Login failed: %1$s"</string>
+    <string name="invalid_input">Invalid username or password</string>
+
+    <!--    Strings related to Summary Fragment-->
+    <string name="info">Info</string>
+    <string name="panen">Panen</string>
+    <string name="logout">Logout</string>
+    <string name="keramba">Keramba</string>
+    <string name="pakan">Pakan</string>
+    <string name="biota">Biota</string>
+    <string name="nama_keramba">Nama Keramba</string>
+    <string name="ukuran_meter_kubik">Ukuran (meter kubik)</string>
+    <string name="simpan">Simpan</string>
+    <string name="tanggal_instalasi">Tanggal Instalasi</string>
+    <string name="ukuran">Ukuran</string>
+    <string name="meter_kubik">%1$s meter kubik</string>
+    <string name="riwayat_biota">Riwayat Biota</string>
+    <string name="keramba_asal">Keramba Asal</string>
+    <string name="ukuran_bibit_gram">Ukuran Bibit (gram)</string>
+    <string name="jenis_biota">Jenis Biota</string>
+    <string name="ukuran_bibit_cm">Ukuran Bibit (cm)</string>
+    <string name="jumlah_tebar">Jumlah Tebar</string>
+    <string name="tanggal_tebar_bibit">Tanggal Tebar Bibit</string>
+    <string name="tambah_biota">Tambah Biota</string>
+    <string name="tambah_keramba">Tambah Keramba</string>
+    <string name="tambah">Tambah</string>
+    <string name="tambah_pakan">Tambah Pakan</string>
+    <string name="jenis_pakan">Jenis Pakan</string>
+
+    <!--    Strings related to Summary Fragment-->
+    <string name="update_keramba">Update Keramba</string>
+    <string name="batalkan">batalkan</string>
+    <string name="data">Data</string>
+    <string name="tambah_data">Tambah Data</string>
+    <string name="ukuran_biota_cm">Ukuran Biota (cm)</string>
+    <string name="bobot_biota_gram">Bobot Biota (gram)</string>
+
+    <string name="tanggal_pengukuran">Tanggal pengukuran: %1$s</string>
+    <string name="tanggal_ukur_biota">Tanggal Pengukuran</string>
+    <string name="tambah_data_biota">Tambah Data Biota</string>
+    <string name="edit_biota">Update Biota</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="nama_pakan">Nama Pakan</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="tambah_data_panen">Tambah Data Panen</string>
+    <string name="tanggal_panen_biota">Tanggal Panen Biota</string>
+    <string name="jumlah_gagal_panen_ekor">Jumlah Gagal Panen (ekor)</string>
+    <string name="jumlah_panen">Jumlah Panen (ekor)</string>
+    <string name="banyaknya_biota">%1$s Biota</string>
+    <string name="update_jenis_pakan">Update Jenis Pakan</string>
+    <string name="batal">batal</string>
+    <string name="ukuran_tebar">Ukuran Tebar</string>
+    <string name="jam_pemberian_pakan">Jam Pemberian Pakan</string>
+    <string name="tambah_detail_pemberian_pakan">Tambah Detail Pemberian Pakan</string>
+    <string name="login">Login</string>
+    <string name="tanggal_pemberian_pakan">Tanggal Pemberian Pakan</string>
+    <string name="tambah_pemberian_pakan">Tambah Pemberian Pakan</string>
+    <string name="edit_data">Update Data</string>
+    <string name="update_pakan">Update Pakan</string>
+    <string name="app_logo">app logo</string>
+    <string name="tampilan">Tampilan</string>
+    <string name="tema_gelap">Tema Gelap</string>
+    <string name="tanggal_hitung_biota">Tanggal Hitung</string>
+    <string name="jumlah_mati_satuan">Jumlah Mati</string>
+    <string name="jumlah_hidup_satuan">Jumlah Hidup</string>
+    <string name="tanggal_perhitungan">Tanggal Perhitungan</string>
+    <string name="tambah_data_perhitungan">Tambah Data Perhitungan</string>
+    <string name="banyak_pakan">Banyak Pakan</string>
+</resources>

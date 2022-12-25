@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/layout_padding"
+            tools:context=".views.summary.keramba.InfoFragment">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/info_keramba_card"
+                android:layout_width="0dp"
+                android:layout_height="138dp"
+                android:layout_marginStart="@dimen/layout_padding"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/layout_padding"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="14dp">
+
+                    <ImageView
+                        android:id="@+id/edit_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/nama_keramba_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/keramba" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tanggal_install_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        app:layout_constraintStart_toStartOf="@+id/nama_keramba_tv"
+                        app:layout_constraintTop_toBottomOf="@+id/nama_keramba_tv"
+                        tools:text="@string/tanggal_instalasi" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ukuran_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/ukuran"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        app:layout_constraintStart_toStartOf="@id/nama_keramba_tv"
+                        app:layout_constraintTop_toBottomOf="@+id/tanggal_install_tv"
+                        tools:text="@string/ukuran" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ukuran_keramba_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        app:layout_constraintStart_toStartOf="@+id/nama_keramba_tv"
+                        app:layout_constraintTop_toBottomOf="@id/ukuran_tv"
+                        tools:text="@string/tanggal_instalasi" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/chart_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_padding"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/layout_padding"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/biota_history_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/info_keramba_card">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="14dp">
+
+                    <ProgressBar
+                        android:id="@+id/progress_loading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="350dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"/>
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/biota_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"/>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/biota_history_btn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/layout_padding"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/layout_padding"
+                android:layout_marginBottom="5dp"
+                android:clickable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chart_card">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/riwayat_biota"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/next_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_navigate_next_24" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
